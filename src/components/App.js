@@ -1,19 +1,21 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import Login from './Login';
 
-import Home from './accountManagement/Home';
-import Transaction from './accountManagement/Transaction';
-import Transfer from './accountManagement/Transfer';
+import { BrowserRouter, Route} from 'react-router-dom';
+import AccountHome from './accountManagement/AccountHome';
+import BankHome from './bankManagement/BankHome';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div>
-        <Route path="/" exact component={Home}/>
-        <Route path="/Transaction" component={Transaction}/>
-        <Route path="/Transfer" component={Transfer}/>
-      </div>
-    </BrowserRouter>
+    <div className = "ui container grid" style = {{margin:"2%", fontSize:"20px"}}>
+       <BrowserRouter>
+
+           <Route path="/" exact component={Login}/>
+           <Route path="/AccountHome" component={AccountHome}/>
+           <Route path="/BankHome" component={BankHome}/>
+
+       </BrowserRouter>
+    </div>
   );
 };
 
